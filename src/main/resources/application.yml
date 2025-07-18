@@ -1,0 +1,11 @@
+spring:
+  r2dbc:
+    url: r2dbc:mysql://localhost:3306/retowebflux
+    username: root
+    password: 123456789
+  main:
+    allow-bean-definition-overriding: true
+
+
+appDescription: "Technology System"
+appVersion: "1.0"
