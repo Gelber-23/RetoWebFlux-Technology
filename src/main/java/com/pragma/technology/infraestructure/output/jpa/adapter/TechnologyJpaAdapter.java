@@ -5,6 +5,7 @@ import com.pragma.technology.domain.spi.ITechnologyPersistencePort;
 import com.pragma.technology.infraestructure.output.jpa.mapper.ITechnologyEntityMapper;
 import com.pragma.technology.infraestructure.output.jpa.repository.ITechnologyRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -35,5 +36,11 @@ public class TechnologyJpaAdapter implements ITechnologyPersistencePort {
     public Mono<Technology> createTechnology(Technology technology) {
         return  technologyRepository.save(technologyEntityMapper.toEntity(technology)).map(technologyEntityMapper::toModel);
 
+    }
+
+    @Override
+    @Transactional
+    public Mono<Void> deleteTechnologyById(Long id) {
+        return technologyRepository.deleteById(id);
     }
 }

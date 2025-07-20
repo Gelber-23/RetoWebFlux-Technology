@@ -23,5 +23,7 @@ public class OpenApiConstants {
 
     public static final String GET_ALL_TECHNOLOGY_TITLE = "Get all technologies";
     public static final String GET_ALL_TECHNOLOGY_MESSAGE = "All technologies returned";
-    
+
+    public static final String DELETE_TECHNOLOGY_TITLE = "Delete technology by ID";
+    public static final String DELETE_TECHNOLOGY_MESSAGE = "Technology deleted";
 }

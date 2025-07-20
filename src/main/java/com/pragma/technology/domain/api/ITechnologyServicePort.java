@@ -9,4 +9,6 @@ public interface ITechnologyServicePort {
     Mono<Technology> getTechnologyById(Long id);
     Flux<Technology> getTechnologies();
     Mono<Technology> createTechnology (Technology technology);
+    Mono<Void> deleteTechnologyById(Long id);
+
 }
