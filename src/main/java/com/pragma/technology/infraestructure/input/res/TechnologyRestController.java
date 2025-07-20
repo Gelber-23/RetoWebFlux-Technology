@@ -57,8 +57,15 @@ public class TechnologyRestController {
 
         return  technologyHandler.getTechnologies();
     }
+    @Operation(summary = OpenApiConstants.DELETE_TECHNOLOGY_TITLE)
+    @ApiResponses(value = {
+            @ApiResponse(responseCode =  OpenApiConstants.RESPONSE_CODE_200, description = OpenApiConstants.DELETE_TECHNOLOGY_MESSAGE, content = @Content),
+            @ApiResponse(responseCode = OpenApiConstants.RESPONSE_CODE_404, description =  OpenApiConstants.NO_DATA_MESSAGE , content = @Content)
+    })
+    @DeleteMapping("/{id}")
 
+    public Mono<Void> deleteTechnologyById(@PathVariable(value = "id")long id){
 
-
-
+        return technologyHandler.deleteTechnologyById( id) ;
+    }
 }

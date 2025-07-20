@@ -41,4 +41,9 @@ public class TechnologyHandler implements ITechnologyHandler {
                 .map(technologyResponseMapper::toResponse);
 
     }
+
+    @Override
+    public Mono<Void> deleteTechnologyById(Long id) {
+        return technologyServicePort.deleteTechnologyById(id);
+    }
 }

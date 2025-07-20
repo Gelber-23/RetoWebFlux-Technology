@@ -10,4 +10,5 @@ public interface ITechnologyPersistencePort {
     Flux<Technology> getTechnologies();
     Mono<Boolean> existsByName(String name);
     Mono<Technology> createTechnology (Technology technology);
+    Mono<Void> deleteTechnologyById(Long id);
 }

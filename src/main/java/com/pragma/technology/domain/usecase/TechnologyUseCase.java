@@ -42,6 +42,11 @@ public class TechnologyUseCase implements ITechnologyServicePort {
                 .flatMap(exists -> technologyPersistencePort.createTechnology(technology));
     }
 
+    @Override
+    public Mono<Void> deleteTechnologyById(Long id) {
+        return technologyPersistencePort.deleteTechnologyById(id);
+    }
+
     private Mono<Technology> isValidTechnology (Technology technology){
         List<String> errors = new ArrayList<>();
 

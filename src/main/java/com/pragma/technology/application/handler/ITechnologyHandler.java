@@ -10,4 +10,6 @@ public interface ITechnologyHandler {
     Mono<TechnologyResponse> getTechnologyById(Long id);
     Flux<TechnologyResponse> getTechnologies();
     Mono<TechnologyResponse> createTechnology (TechnologyRequest technologyRequest);
+    Mono<Void> deleteTechnologyById(Long id);
+
 }
